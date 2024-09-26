@@ -8,7 +8,7 @@ export default class Game {
         this.app = app;
         this.resources = resources;
         this.numPairs = config.game.numPairs;
-        
+        this.createCounterText()
         this.resetGameState()
         this.start();
 
@@ -17,6 +17,24 @@ export default class Game {
 
     start() {
         this.createCards();
+    }
+
+    createCounterText() {
+        this.attemptsLeftText = new PIXI.Text(``, {
+            fontSize: 30,
+            fill: 'white',
+            align: 'center',
+        });
+
+        this.attemptsLeftText.x = 20;
+        this.attemptsLeftText.y = 20;
+        this.updateCounterText()
+
+        this.app.stage.addChild(this.attemptsLeftText);
+    }
+
+    updateCounterText(attemptsLeft = this.maxAttempts) {
+        this.attemptsLeftText.text = `Attempts Left: ${attemptsLeft}`
     }
 
     createCards() {
@@ -99,6 +117,7 @@ export default class Game {
         }
 
         this.attempts++;
+        this.updateCounterText(this.maxAttempts - this.attempts)
         this.checkGameOver();
     }
 
@@ -161,5 +180,6 @@ export default class Game {
         this.maxAttempts = this.numPairs * 2;
         this.attempts = 0;
         this.isGameOver = false
+        this.updateCounterText()
     }
 }
