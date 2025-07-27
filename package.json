@@ -9,7 +9,8 @@
   "author": "Miroslav Dranchovski",
   "license": "MIT",
   "dependencies": {
-    "gsap": "^3.12.5",
+    "@pixi/filter-glow": "^5.2.1",
+    "gsap": "^3.13.0",
     "pixi.js": "^6.2.0"
   },
   "devDependencies": {
