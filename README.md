@@ -1,11 +1,28 @@
-# Pixi-game
+# Poseidon Slot Game 🎰
 
-This is a simple slot pixi game.
+Poseidon is a simple and engaging slot machine game built with TypeScript and PixiJS. The game provides a browser-based experience with smooth animations and a clean design, ideal for demonstrating game mechanics, animations, and modular structure in a web-based slot game.
 
-# Install
+## 🧠 Features
 
-Before you play, you have to run npm install in order to install the packages. You can use npm install command.
+- 🎮 Slot machine game logic
+- ⚙️ Built with PixiJS for rendering
+- 🧩 Modular TypeScript architecture
+- 📦 Webpack for bundling
+- 📐 Includes UML class diagram for game structure
 
-# Run game
+## 📸 Preview
 
-To run the game you have to run npm run start.
+![Slot Machine Diagram](./slot_machine_class_diagram.png)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed.
+
+### Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+npm install
