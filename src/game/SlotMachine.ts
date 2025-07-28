@@ -94,15 +94,16 @@ export class SlotMachine {
         let won = 0;
 
         for (let row = 0; row < 3; row++) {
-            const [a, b, c] = matrix[row];
+            const a = matrix[0][row];
+            const b = matrix[1][row];
+            const c = matrix[2][row];
             if (a === b && b === c) {
-                for (let col = 0; col < 3; col++) {
-                    const sprite = this.reels[col].getSymbolAt(row);
-                    sprite.filters = [new GlowFilter({ color: 0xffff00, outerStrength: 4 })];
-                }
-                won += 5;
+               for (let col = 0; col < 3; col++) {
+                const sprite = this.reels[col].getSymbolAt(row);
+                sprite.filters = [new GlowFilter({ color: 0xffff00, outerStrength: 4 })];
             }
         }
+    }
 
         this.lastWin = won;
         this.balance += won;
